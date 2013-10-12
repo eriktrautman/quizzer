@@ -8,5 +8,6 @@ class CreateQuizCategories < ActiveRecord::Migration
     end
     add_index :quiz_categories, :quiz_id
     add_index :quiz_categories, :category_id
+    add_index [:quiz_categories, :category_id], :unique => true
   end
 end

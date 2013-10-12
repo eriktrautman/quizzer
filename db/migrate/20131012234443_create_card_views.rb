@@ -12,5 +12,6 @@ class CreateCardViews < ActiveRecord::Migration
     end
     add_index :card_views, :user_id
     add_index :card_views, :card_id
+    add_index [:card_views, :user_id], :unique => true
   end
 end
