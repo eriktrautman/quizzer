@@ -16,3 +16,5 @@ DONE Add CategoryQueue so user has a unique queue per category (since now users 
   Category Creation and edit forms (basic)
   Category creation/edit form backends
   High visibility creation / edit form
+* Tests
+  Make sure user can't create identical quizzes

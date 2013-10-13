@@ -1,6 +1,9 @@
 Quizzer::Application.routes.draw do
 
-  root "quizzes#index"
+  root "quizzes#new"
+
+  resources :quizzes, :only => [:new, :create, :index]
+  get "take_quiz" => "quizzes#take_quiz"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
