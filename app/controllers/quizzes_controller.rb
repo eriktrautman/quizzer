@@ -11,9 +11,9 @@ class QuizzesController < ApplicationController
   def create
     user = User.find_by_id(params[:quiz][:user_id])
     if user
-      puts "\n\n\n\n QUIZ PARAMS: #{quiz_params}!\n\n\n"
       @quiz = Quiz.new(quiz_params)
       if @quiz.save
+        user.create_category_queues(quiz_params[:category_ids])
         flash[:success] = "Quiz Created!"
         redirect_to take_quiz_path
       else

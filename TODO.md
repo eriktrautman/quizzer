@@ -3,7 +3,9 @@
 DONE Add CategoryQueue so user has a unique queue per category (since now users share a queue... bad!)
 * Quiz Execution
   Selection form for categories (e.g. quizzes#new)
-    Creates new quiz and populates the queue
+    DONE Creates new quiz 
+    DONE populates the queue
+      DONE Create the usercategoryqueue for each category if it doesn't aready exist
     Current_question route to display the top of queue
     Current_question view to pull up current card (not hidden yet)
     Render markdown with current_question

@@ -6,7 +6,7 @@ class Quiz < ActiveRecord::Base
   has_many :cards, :through => :categories 
 
   validates :user, :presence => true
-  validates :name, :presence => true
+  validates :name, :presence => true, :uniqueness => true
   validates :quiz_categories, :presence => true
 
 end
