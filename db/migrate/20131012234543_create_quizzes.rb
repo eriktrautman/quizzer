@@ -1,7 +1,7 @@
 class CreateQuizzes < ActiveRecord::Migration
   def change
     create_table :quizzes do |t|
-      t.int :user_id
+      t.integer :user_id
       t.string :name
 
       t.timestamps

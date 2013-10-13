@@ -1,7 +1,7 @@
 class CreateCards < ActiveRecord::Migration
   def change
     create_table :cards do |t|
-      t.int :category_id
+      t.integer :category_id
       t.string :title
       t.text :body
 
