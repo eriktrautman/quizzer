@@ -1,6 +1,6 @@
 # TODO
 
-* Add CategoryQueue so user has a unique queue per category (since now users share a queue... bad!)
+DONE Add CategoryQueue so user has a unique queue per category (since now users share a queue... bad!)
 * Quiz Execution
   Selection form for categories (e.g. quizzes#new)
     Creates new quiz and populates the queue
