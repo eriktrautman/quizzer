@@ -18,6 +18,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # Beautiful forms
 gem 'simple_form'
 
+# Better Error Messages
+gem 'better_errors'
+gem 'binding_of_caller'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
