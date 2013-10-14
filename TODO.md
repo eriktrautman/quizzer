@@ -4,6 +4,7 @@ Gussy up the UI for the current_card form
 Gussy up the UI for the data entry forms
 UI: High visibility creation / edit form for cards
 Deploy to Heroku
+Create javascript listener to use "p" and "f" keys to advance
 * Tests
   Make sure user can't create identical quizzes
   When you pass a card, its views should update properly

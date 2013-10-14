@@ -9,9 +9,8 @@ var Card = {
 
   showBody: function(){
     $cardBody = $(".card-body");
-    console.log("WWOOO");
-    console.log(Card.$cardBody);
     $cardBody.css("visibility","visible");
+    $(".show-button").hide();
   }
 };
 

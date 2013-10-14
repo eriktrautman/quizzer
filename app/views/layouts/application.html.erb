@@ -11,7 +11,9 @@
   <%= flash.inspect unless flash.empty? %>
   <%= render "shared/navbar" %>
   
-  <%= yield %>
+  <div id="content">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

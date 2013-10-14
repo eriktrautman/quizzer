@@ -1,43 +1,33 @@
 <div id="show-card">
-  <h1> Taking Quiz: <%= @quiz.name %> </h1>
-  <%= render :partial => "pass_fail_show", :locals => { :quiz => @quiz, :card_id => @card.id } %>
-  <div class="card-views">
-    <ul>
-      <% if @card_views %>
-        <li>
-          Views: <%= @card_views.pass_count + @card_views.fail_count %>
-        </li>
-        <li>
-          Pass: <%= @card_views.pass_count %>
-        </li>
-        <li>
-          Fail: <%= @card_views.fail_count %>
-        </li>
-        <li>
-          Urgency: <%= @card_views.urgency %>
-        </li>
-      <% else %>
-        <li>
-          This card is brand new!
-        </li>
-      <% end %>
-    </ul>
 
+  <div class="title">
+    <h1><%= @quiz.name %></h1>
   </div>
 
   <div class="card-category">
-    <h3>Category: <%= @card.category.name %></h3>
+    <h2>Category: <%= @card.category.name %></h2>
+  </div>
+
+  <div class="top-action-pack">
+    <%= render :partial => "pass_fail", :locals => { :quiz => @quiz, :card_id => @card.id } %>
+    <%= render :partial => "card_stats", :locals => { :card_views => @card_views } %>
   </div>
 
   <div class="card-title">
-    <h2><%= @card.title %></h2>
+    <h1>Q: <%= @card.title %></h1>
   </div>
 
+  <button class="show-button" onClick="Card.showBody()">
+    Show Answer
+  </button>
   <div class="card-body">
     <%= md(@card.body).html_safe %>
   </div>
 
-  <%= render :partial => "pass_fail_show", :locals => { :quiz => @quiz, :card_id => @card.id } %>
+
+  <div class="bottom-action-pack">
+    <%= render :partial => "pass_fail", :locals => { :quiz => @quiz, :card_id => @card.id } %>
+  </div>
 
 
 </div>

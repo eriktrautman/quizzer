@@ -42,7 +42,7 @@ class QuizzesController < ApplicationController
       current_card = Card.find(params[:card_id])
       user.pass_card(current_card) if params[:card_status] == "pass"
       user.fail_card(current_card) if params[:card_status] == "fail"
-      flash[:success] = "Good work! Next card:"
+      # flash[:success] = "Good work! Next card:"
       current_card = quiz.current_card
       redirect_to quiz_card_path(quiz, current_card)
     else

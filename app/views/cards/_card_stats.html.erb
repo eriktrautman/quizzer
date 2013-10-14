@@ -1,0 +1,26 @@
+<div class="card-stats">
+  <ul>
+    <% if @card_views %>
+      <li>
+        <%= @card_views.pass_count %> Pass 
+      </li>
+      <li>
+        <%= @card_views.fail_count %> Fail
+      </li>
+      <li>
+        ==> <%= (@card_views.pass_count / (@card_views.pass_count + @card_views.fail_count).to_f).to_f.round(2) * 100 %>% Pass
+      </li>
+      <!-- <li>
+        <%= @card_views.pass_count + @card_views.fail_count %> Views
+      </li> -->
+      <hr>
+      <li>
+        <%= @card_views.urgency %> Urgency
+      </li>
+    <% else %>
+      <li>
+        This card is brand new!
+      </li>
+    <% end %>
+  </ul>
+</div>

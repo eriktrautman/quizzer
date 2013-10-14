@@ -4,8 +4,113 @@
 
 #show-card{
 
+  font-size: 1em;
+  line-height: 1.25em;
+  position: relative;
+
+  h1{
+    font-size: 3em;
+    line-height: 1.25em;
+  }
+  h2{
+    font-size: 2.5em;
+    line-height: 1.25em;
+  }
+  h3{
+    font-size: 2em;
+    line-height: 1.5em;
+  }
+  h4{
+    font-size: 1.75em;
+    line-height: 1.5em;
+  }
+  p{
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+
+  .clearfix{
+    position: relative;
+    height: 1px;
+  }
+
+  .title{
+    text-align: center;
+    margin: 1em 0 0 0;
+    h1{
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  }
+
+  .card-category{
+    text-align: center;
+    h2{
+      font-size: 1.25em;
+    }
+
+  }
+
+  .top-action-pack{
+    position: relative;
+    height: 6em;
+    .card-stats{
+      font-family: monospace;
+      font-size: 1em;
+      line-height: 1em;
+      position: absolute;
+      width: 10em;
+      margin: 0 auto 0 -5em;
+      top: 1.5em;
+      left: 50%;
+    }
+  }
+  .pass-fail-buttons{
+    position: absolute;
+    width: 100%;
+    height: 1em;
+    z-index: 1;
+    .decision-button{
+      position: absolute;
+      width: 40%;
+      min-width: 3em;
+      min-height: 2em;  
+      font-size: 3em;
+      font-weight: bold;
+    }
+    .pass-button{
+      background-color: #0c0;
+      right: 0em;
+    }
+    .fail-button{
+      background-color: #c00;
+      left: 0em;
+    }
+    display: inline-block;
+  }
+  .bottom-action-pack{
+    position: relative;
+    height: 6em;
+  }
+
+  .card-title{
+    padding: .25em 0;
+  }
+
+  .show-button{
+    position: absolute;
+    font-size: 3em;
+    width: 100%;
+    height: 3em;
+  }
+
   .card-body{
     visibility: hidden;
+    min-height: 20em;
+    width: 90%;
+    padding: 1em 5%;
+    border: 1px solid #ccc;
+    margin: 1em 0;
   }
 
 }
