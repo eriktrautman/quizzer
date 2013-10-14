@@ -1,0 +1,3 @@
+<%= button_to "Pass", quiz_next_card_path(quiz, :status => "pass"), :method => :get %>
+<%= button_to "Fail", quiz_next_card_path(quiz, :status => "fail"), :method => :get %>
+<%= button_to "Show", quiz_next_card_path(quiz), :method => :get %>

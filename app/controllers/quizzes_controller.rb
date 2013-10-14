@@ -28,10 +28,15 @@ class QuizzesController < ApplicationController
   end
 
   def current_card
+    quiz = Quiz.find(params[:quiz_id])
+    current_card = quiz.current_card
+    redirect_to quiz_card_path(quiz, current_card)
+  end
+
+  def next_card
     @quiz = Quiz.find(params[:quiz_id])
     @user = @quiz.user
-    @cards = @quiz.cards
-    @current_card = @quiz.current_card
+    current_card = @quiz.current_card
   end
 
   private

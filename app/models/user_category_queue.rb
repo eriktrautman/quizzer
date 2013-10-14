@@ -8,6 +8,6 @@ class UserCategoryQueue < ActiveRecord::Base
 
   # Let Rails handle making our queue array into a serialized
   # form for saving and then deserializing it when I access it
-  serialize :queue
+  serialize :queue, Array
   
 end

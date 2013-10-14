@@ -7,7 +7,7 @@ class Quiz < ActiveRecord::Base
 
   validates :user, :presence => true
   validates :name, :presence => true, :uniqueness => true
-  validates :quiz_categories, :presence => true
+  validates :categories, :presence => true
 
   # Generates the current card by randomly sampling
   # from among the available categories and grabbing
