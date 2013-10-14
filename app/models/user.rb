@@ -25,4 +25,52 @@ class User < ActiveRecord::Base
     end
   end
 
+  # Update the pass numbers
+  def pass_card(card)
+
+    # create a new view table for this card and user if this is our
+    # first time seeing this card (e.g. it doesn't have that table)
+    if card.card_views.where(:user => self).empty?
+      card.card_views << CardView.create!(:user => self, :card => card)
+    end
+    
+    # update the stats: add a pass and reduce a prior fail if any
+    cv = card.card_views.where(:user => self).first
+    cv.pass_count += 1
+    cv.urgency -= 1 if cv.urgency > 0
+    cv.save!
+
+    # shuffle the card back into the deck at a position based on
+    # its urgency
+    shuffle_pct = Card.get_shuffle_location(cv.urgency)
+    ucq = UserCategoryQueue.where(:user => self, :category => card.category).first
+    queue = ucq.queue
+    new_pos = rand( queue.size * shuffle_pct )
+    ucq.queue = queue.insert(new_pos, queue.delete_at(0))
+    ucq.save!
+  end
+
+  def fail_card(card)
+    # create a new view table for this card and user if this is our
+    # first time seeing this card (e.g. it doesn't have that table)
+    if card.card_views.where(:user => self).empty?
+      card.card_views << CardView.create!(:user => self, :card => card)
+    end
+    
+    # update the stats: add a fail and reduce a prior fail if any
+    cv = card.card_views.where(:user => self).first
+    cv.fail_count += 1
+    cv.urgency += 1
+    cv.save!
+
+    # shuffle the card back into the deck at a position based on
+    # its urgency
+    shuffle_pct = Card.get_shuffle_location(cv.urgency)
+    ucq = UserCategoryQueue.where(:user => self, :category => card.category).first
+    queue = ucq.queue
+    new_pos = rand( queue.size * shuffle_pct )
+    ucq.queue = queue.insert(new_pos, queue.delete_at(0))
+    ucq.save!
+  end
+
 end

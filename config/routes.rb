@@ -4,8 +4,8 @@ Quizzer::Application.routes.draw do
 
   resources :quizzes, :only => [:new, :create, :index, :show] do
     get "current_card" => "quizzes#current_card"
-    get "next_card" => "quizzes#next_card"
-    get "prev_card" => "quizzes#prev_card"
+    post "next_card" => "quizzes#next_card"
+    post "prev_card" => "quizzes#prev_card"
     resources :cards, :only => [:show]
   end
   # The priority is based upon order of creation: first created -> highest priority.

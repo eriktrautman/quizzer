@@ -33,10 +33,22 @@ class QuizzesController < ApplicationController
     redirect_to quiz_card_path(quiz, current_card)
   end
 
+  # Advance to the next card, first stashing the current card
+  # and updating its status depending whether it passed or failed
   def next_card
-    @quiz = Quiz.find(params[:quiz_id])
-    @user = @quiz.user
-    current_card = @quiz.current_card
+    if ["pass","fail"].include?(params[:card_status])
+      quiz = Quiz.find(params[:quiz_id])
+      user = quiz.user
+      current_card = quiz.current_card
+      user.pass_card(current_card) if params[:card_status] == "pass"
+      user.fail_card(current_card) if params[:card_status] == "fail"
+      flash[:success] = "Good work! Next card:"
+      current_card = quiz.current_card
+      redirect_to quiz_card_path(quiz, current_card)
+    else
+      flash[:error] = "Couldn't figure out whether you passed or failed that particular card... try again?"
+      redirect_to :back
+    end
   end
 
   private

@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20131014030333) do
   create_table "card_views", force: true do |t|
     t.integer  "user_id"
     t.integer  "card_id"
-    t.integer  "pass_count"
-    t.integer  "fail_count"
-    t.integer  "urgency"
+    t.integer  "pass_count", default: 0
+    t.integer  "fail_count", default: 0
+    t.integer  "urgency",    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

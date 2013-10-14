@@ -1,5 +1,6 @@
 <div id="show-card">
   <h1> Taking Quiz: <%= @quiz.name %> </h1>
+  <%= render :partial => "pass_fail_show", :locals => { :quiz => @quiz } %>
 
   <div class="card-category">
     <h3>Category: <%= @card.category.name %></h3>
