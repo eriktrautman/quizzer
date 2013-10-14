@@ -1,0 +1,11 @@
+<%= simple_form_for card do |f| %>
+
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.association :category %>
+  <%= f.submit %>
+
+<% end %>
+<% if card.persisted? %>
+  <%= link_to "Delete card", card, :method => :delete, :confirm => "Are you SURE you want to delete this?" %>
+<% end %>

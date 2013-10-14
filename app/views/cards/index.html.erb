@@ -1,0 +1,21 @@
+<h1>Cards</h1>
+
+<%= link_to "New Card", new_card_path %>
+
+<div id="cards-list">
+
+  <ul>
+    <% @categories.each do |cat| %>
+      <li><%= link_to cat.name, edit_category_path(cat) %>
+        <ul>
+          <% cat.cards.each do |card| %>
+            <%= link_to edit_card_path(card) do %>
+              <li><%= card.title %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+
+</div>
