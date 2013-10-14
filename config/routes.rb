@@ -8,6 +8,9 @@ Quizzer::Application.routes.draw do
     post "prev_card" => "quizzes#prev_card"
     resources :cards, :only => [:show]
   end
+
+  resources :categories, :except => [:show]
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

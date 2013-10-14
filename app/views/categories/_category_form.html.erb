@@ -1,0 +1,9 @@
+<%= simple_form_for category do |f| %>
+
+  <%= f.input :name %>
+  <%= f.submit %>
+
+<% end %>
+<% if category.persisted? %>
+  <%= link_to "Delete Category", category, :method => :delete, :confirm => "Are you SURE you want to delete this?  It will remove all cards in this category!!!" %>
+<% end %>
