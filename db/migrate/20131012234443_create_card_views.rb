@@ -3,10 +3,10 @@ class CreateCardViews < ActiveRecord::Migration
     create_table :card_views do |t|
       t.integer :user_id
       t.integer :card_id
-      t.integer :view_count
-      t.integer :pass_count
-      t.integer :fail_count
-      t.integer :urgency
+      t.integer :view_count, :default => 0
+      t.integer :pass_count, :default => 0
+      t.integer :fail_count, :default => 0
+      t.integer :urgency, :default => 0
 
       t.timestamps
     end
