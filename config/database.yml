@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: quizzer_test
   pool: 5
-  username: quizzer
+  username: eriktrautman
   password:
 
 production:
@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: quizzer_production
   pool: 5
-  username: quizzer
+  username:
   password:
