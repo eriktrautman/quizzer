@@ -12,7 +12,8 @@ DONE Add CategoryQueue so user has a unique queue per category (since now users 
     DONE Add index page for quick jump into a quiz
     DONE Add form for advancing to the next card via either pass or fail
     DONE Create backend for form to increment appropriate value and DONE shuffle card back into correct position of queue
-    Write javascript to show answer and disable show button when pushed
+    DONE Write javascript to show answer and disable show button when pushed
+    Show the card's stats across the top
     Gussy up the UI for the current_card form
 * Data Entry
   Card creation and edit forms (basic)
