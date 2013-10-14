@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <%= flash.inspect %>
+  <%= flash.inspect unless flash.empty? %>
 
 <%= yield %>
 

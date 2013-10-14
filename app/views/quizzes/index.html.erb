@@ -1,3 +1,13 @@
 <h1>
   Welcome to Quizzer!
 </h1>
+
+<div class="quiz-list">
+  <ul>
+    <% @quizzes.each do |quiz| %>
+      <%= link_to quiz_current_card_path(quiz) do %>
+        <li><%= quiz.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

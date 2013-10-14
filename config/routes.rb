@@ -1,6 +1,6 @@
 Quizzer::Application.routes.draw do
 
-  root "quizzes#new"
+  root "quizzes#index"
 
   resources :quizzes, :only => [:new, :create, :index, :show] do
     get "current_card" => "quizzes#current_card"
