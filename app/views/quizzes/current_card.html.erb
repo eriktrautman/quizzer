@@ -1,14 +1,16 @@
 <div id="current-card">
-  <h1> TAKING QUIZ -- Current Card </h1>
+  <h1> Taking Quiz: <%= @quiz.name %> </h1>
 
-  The current card is: <%= @current_card.inspect %>
+  <div class="card-category">
+    <h3>Category: <%= @current_card.category.name %></h3>
+  </div>
 
   <div class="card-title">
     <h2><%= @current_card.title %></h2>
   </div>
 
   <div class="card-body">
-    <%= @current_card.body %>
+    <%= md(@current_card.body).html_safe %>
   </div>
 
 
