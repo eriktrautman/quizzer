@@ -6,4 +6,8 @@ class UserCategoryQueue < ActiveRecord::Base
   validates :user, :presence => true
   validates :category, :presence => true
 
+  # Let Rails handle making our queue array into a serialized
+  # form for saving and then deserializing it when I access it
+  serialize :queue
+  
 end

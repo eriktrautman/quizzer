@@ -15,7 +15,7 @@ class QuizzesController < ApplicationController
       if @quiz.save
         user.create_category_queues(quiz_params[:category_ids])
         flash[:success] = "Quiz Created!"
-        redirect_to take_quiz_path
+        redirect_to quiz_current_card_path(@quiz)
       else
         flash[:error] = "Quiz couldn't be created because: #{@quiz.errors.full_messages}!"
         render :new
@@ -26,8 +26,11 @@ class QuizzesController < ApplicationController
     end
   end
 
-  def take_quiz
-
+  def current_card
+    @quiz = Quiz.find(params[:quiz_id])
+    @user = @quiz.user
+    @cards = @quiz.cards
+    @current_card = @quiz.current_card
   end
 
   private

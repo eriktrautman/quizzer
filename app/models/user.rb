@@ -7,13 +7,13 @@ class User < ActiveRecord::Base
 
   # create the user category queues if they don't already exist
   def create_category_queues(category_ids)
-    scq = self.user_category_queues
+    ucq = self.user_category_queues
     category_ids.each do |id|
       next if id.blank?
       cat = Category.find(id)
-      unless scq.include?(cat)
+      unless ucq.include?(cat)
         queue = cat.new_queue
-        UserCategoryQueue.create(:user => self, :queue => queue)
+        new_ucq = UserCategoryQueue.create!(:user => self, :category => cat, :queue => queue)
       end
     end
   end

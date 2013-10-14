@@ -9,4 +9,13 @@ class Quiz < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
   validates :quiz_categories, :presence => true
 
+  # Generates the current card by randomly sampling
+  # from among the available categories and grabbing
+  # the top card of the queue
+  def current_card
+    cat = self.categories.sample
+    ucq = UserCategoryQueue.where(:user => self.user, :category => cat).first
+    ucq.queue.first
+  end
+
 end
