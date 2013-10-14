@@ -34,11 +34,11 @@ Card.create!(  :category_id => 1,
               :body => "## North Indian\n\n* Chicken Tikka Masala\n* Naan\n"
             )
 Card.create!(  :category_id => 1,
-              :title => "Apple Types",
+              :title => "Types of Apples",
               :body => "## Red Apples\n\n1. Red Delicious\n1. Fuji\n\n## Green Apples\n\n* Granny Smith\n* *Green Giant*"
             )
 Card.create!(  :category_id => 2,
-              :title => "Apple",
+              :title => "Apple Computer",
               :body => "Big ass tech company that makes the **iPhone** and all the other great hits"
             )
 Card.create!(  :category_id => 2,
