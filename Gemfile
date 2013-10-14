@@ -22,6 +22,9 @@ gem 'simple_form'
 gem 'better_errors'
 gem 'binding_of_caller'
 
+# for markdown rendering
+gem 'redcarpet' 
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
