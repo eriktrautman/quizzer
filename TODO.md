@@ -1,6 +1,7 @@
 # TODO
 
-Gussy up the UI for the current_card form
+DONE Gussy up the UI for the current_card form
+Go back and make sure the queue updates every time for new cards
 Gussy up the UI for the data entry forms
 UI: High visibility creation / edit form for cards
 Deploy to Heroku
