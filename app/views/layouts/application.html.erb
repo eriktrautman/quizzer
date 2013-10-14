@@ -9,8 +9,9 @@
 <body>
 
   <%= flash.inspect unless flash.empty? %>
-
-<%= yield %>
+  <%= render "shared/navbar" %>
+  
+  <%= yield %>
 
 </body>
 </html>
