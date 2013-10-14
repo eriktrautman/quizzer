@@ -5,6 +5,7 @@ class CardsController < ApplicationController
     @quiz = Quiz.find(params[:quiz_id])
     @card = Card.find(params[:id])
     @user = @quiz.user
+    @user.rebuild_category_queue(@card.category.id)
     cv = @card.card_views.where(:user => @user)
     if cv.empty?
       @card_views = nil
