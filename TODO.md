@@ -13,7 +13,7 @@ DONE Add CategoryQueue so user has a unique queue per category (since now users 
     DONE Add form for advancing to the next card via either pass or fail
     DONE Create backend for form to increment appropriate value and DONE shuffle card back into correct position of queue
     DONE Write javascript to show answer and disable show button when pushed
-    Show the card's stats across the top
+    DONE Show the card's stats across the top
     Gussy up the UI for the current_card form
 * Data Entry
   Card creation and edit forms (basic)
@@ -23,3 +23,7 @@ DONE Add CategoryQueue so user has a unique queue per category (since now users 
   High visibility creation / edit form
 * Tests
   Make sure user can't create identical quizzes
+  When you pass a card, its views should update properly
+  When you fail a card, its views should update properly
+  When you first start off, card views should be empty
+  As soon as you pass a card, its card view should be created

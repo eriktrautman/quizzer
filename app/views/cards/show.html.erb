@@ -1,6 +1,29 @@
 <div id="show-card">
   <h1> Taking Quiz: <%= @quiz.name %> </h1>
-  <%= render :partial => "pass_fail_show", :locals => { :quiz => @quiz } %>
+  <%= render :partial => "pass_fail_show", :locals => { :quiz => @quiz, :card_id => @card.id } %>
+  <div class="card-views">
+    <ul>
+      <% if @card_views %>
+        <li>
+          Views: <%= @card_views.pass_count + @card_views.fail_count %>
+        </li>
+        <li>
+          Pass: <%= @card_views.pass_count %>
+        </li>
+        <li>
+          Fail: <%= @card_views.fail_count %>
+        </li>
+        <li>
+          Urgency: <%= @card_views.urgency %>
+        </li>
+      <% else %>
+        <li>
+          This card is brand new!
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
 
   <div class="card-category">
     <h3>Category: <%= @card.category.name %></h3>
@@ -14,7 +37,7 @@
     <%= md(@card.body).html_safe %>
   </div>
 
-  <%= render :partial => "pass_fail_show", :locals => { :quiz => @quiz } %>
+  <%= render :partial => "pass_fail_show", :locals => { :quiz => @quiz, :card_id => @card.id } %>
 
 
 </div>

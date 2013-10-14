@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :card_views
+  has_many :viewed_cards, :through => :card_views, :source => :card
   has_many :quizzes
   has_many :user_category_queues
 
@@ -27,18 +28,21 @@ class User < ActiveRecord::Base
 
   # Update the pass numbers
   def pass_card(card)
-
+    puts "\n\n\n\n\n\n\n\n\n PASSING CARD!!! \n\n\n\n\n\n"
     # create a new view table for this card and user if this is our
     # first time seeing this card (e.g. it doesn't have that table)
     if card.card_views.where(:user => self).empty?
+      puts "\n\n\n\n CREATING A NEW CARD VIEW! \n\n\n\n"
       card.card_views << CardView.create!(:user => self, :card => card)
     end
     
     # update the stats: add a pass and reduce a prior fail if any
     cv = card.card_views.where(:user => self).first
+    puts "\n\n\n\n Old card view is: #{cv.inspect}!!\n\n\n"
     cv.pass_count += 1
     cv.urgency -= 1 if cv.urgency > 0
     cv.save!
+    puts "\n\n\n\n New Card view is: #{cv.reload.inspect}! \n\n\n\n"
 
     # shuffle the card back into the deck at a position based on
     # its urgency
@@ -54,10 +58,11 @@ class User < ActiveRecord::Base
     # create a new view table for this card and user if this is our
     # first time seeing this card (e.g. it doesn't have that table)
     if card.card_views.where(:user => self).empty?
+      puts "\n\n\n\n CREATING A NEW CARD VIEW! \n\n\n\n"
       card.card_views << CardView.create!(:user => self, :card => card)
     end
     
-    # update the stats: add a fail and reduce a prior fail if any
+    # update the stats: add a fail and upgrade urgency
     cv = card.card_views.where(:user => self).first
     cv.fail_count += 1
     cv.urgency += 1

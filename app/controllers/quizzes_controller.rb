@@ -39,7 +39,7 @@ class QuizzesController < ApplicationController
     if ["pass","fail"].include?(params[:card_status])
       quiz = Quiz.find(params[:quiz_id])
       user = quiz.user
-      current_card = quiz.current_card
+      current_card = Card.find(params[:card_id])
       user.pass_card(current_card) if params[:card_status] == "pass"
       user.fail_card(current_card) if params[:card_status] == "fail"
       flash[:success] = "Good work! Next card:"
