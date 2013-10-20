@@ -38,6 +38,10 @@ ul{
 ol{
   list-style: upper-roman;
 }
+li{
+  font-size: 1.1em;
+  line-height: 1.25em;
+}
 a{
   &:hover{
     color: red;
@@ -71,6 +75,18 @@ a{
   }
 }
 
+.flash{
+  font-size: 1.5em;
+  text-align: center;
+  padding: .25em 0;
+  &.success{
+    background-color: #6f6;
+  }
+  &.error{
+    background-color: #f66;
+  }
+}
+
 .new-card{
   width: 46em;
 
@@ -100,6 +116,13 @@ a{
   }
 }
 
+.new-card-link{
+  font-size: 2em;
+  font-weight: bold;
+  font-variant: small-caps;
+  background-color: #6f6;
+  text-align: center;
+}
 
 
 

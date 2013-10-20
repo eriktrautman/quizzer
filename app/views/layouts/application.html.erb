@@ -9,8 +9,10 @@
 <body>
 
   <% unless flash.empty? %>
-    <% flash.each do |msg| %>
-      <%= msg.inspect %>
+    <% flash.keys.each do |key| %>
+      <div class="flash <%= key %>">
+        <%= flash[key] %>
+      </div>
     <% end %>
   <% end %>
   <%= render "shared/navbar" %>

@@ -1,6 +1,10 @@
 <h1>Cards</h1>
 
-<%= link_to "New Card", new_card_path %>
+<%= link_to new_card_path do%>
+  <div class="new-card-link">
+    New Card
+  </div>
+<% end %>
 
 <div id="cards-list">
 

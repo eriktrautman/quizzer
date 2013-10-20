@@ -1,6 +1,5 @@
 # TODO
 
-Set cookie for last used category for card to autopopulate it
 Change redirect for a new card to the new page
 UI: High visibility creation / edit form for cards
 Deploy to Heroku
@@ -12,6 +11,7 @@ Create javascript listener to use "p" and "f" keys to advance
   When you first start off, card views should be empty
   As soon as you pass a card, its card view should be created
 
+DONE Set cookie for last used category for card to autopopulate it
 DONE Gussy up the UI for the data entry forms
 DONE Gussy up the UI for the current_card form
 DONE Go back and make sure the queue updates every time for new cards
