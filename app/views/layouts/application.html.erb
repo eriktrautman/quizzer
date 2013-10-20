@@ -8,7 +8,11 @@
 </head>
 <body>
 
-  <%= flash.inspect unless flash.empty? %>
+  <% unless flash.empty? %>
+    <% flash.each do |msg| %>
+      <%= msg.inspect %>
+    <% end %>
+  <% end %>
   <%= render "shared/navbar" %>
   
   <div id="content">

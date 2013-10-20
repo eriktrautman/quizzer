@@ -1,11 +1,21 @@
-<%= simple_form_for card do |f| %>
+<div class="new-card">
+  <%= simple_form_for card do |f| %>
 
-  <%= f.input :title %>
-  <%= f.input :body %>
-  <%= f.association :category %>
-  <%= f.submit %>
+    <div class="input">
+      <%= f.input :title %>
+    </div>
+    <div class="input">
+      <%= f.input :body %>
+    </div>
+    <div class="input">
+      <%= f.association :category %>
+    </div>
+    <div class="input">
+      <%= f.submit %>
+    </div>
 
-<% end %>
-<% if card.persisted? %>
-  <%= link_to "Delete card", card, :method => :delete, :confirm => "Are you SURE you want to delete this?" %>
-<% end %>
+  <% end %>
+  <% if card.persisted? %>
+    <%= link_to "Delete card", card, :method => :delete, :confirm => "Are you SURE you want to delete this?" %>
+  <% end %>
+</div>

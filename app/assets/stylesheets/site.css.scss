@@ -1,4 +1,33 @@
 
+body{
+  font-size: 100%;
+}
+
+/* Typography Scale */
+
+h1{
+  font-size: 3em;
+  line-height: 1.25em;
+}
+h2{
+  font-size: 2.5em;
+  line-height: 1.25em;
+}
+h3{
+  font-size: 2em;
+  line-height: 1.5em;
+}
+h4{
+  font-size: 1.75em;
+  line-height: 1.5em;
+}
+p{
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+/* Standard Elements */
+
 ul,ol{
   padding-left: 1em;
   line-height: 1.25em;
@@ -8,6 +37,14 @@ ul{
 }
 ol{
   list-style: upper-roman;
+}
+a{
+  &:hover{
+    color: red;
+    & > li{ 
+      
+    }
+  }
 }
 
 #content{
@@ -33,3 +70,42 @@ ol{
     text-align: center;
   }
 }
+
+.new-card{
+  width: 46em;
+
+  input{
+    width: 100%;
+    &[name="card[title]"]{
+      height: 2em;
+    }
+    &[type="submit"]{
+      font-size: 2em;
+      height: 2em;
+    }
+  }
+  textarea{
+    width: 100%;
+    font-size: 1.5em;
+    height: 15em; 
+  }
+  select{
+    width: 50%;
+  }
+  label{
+    font-size: 1.5em;
+  }
+  .input{
+    margin: 1em 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
