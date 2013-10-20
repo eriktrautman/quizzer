@@ -17,7 +17,8 @@
       <li>
         <%= "#{quiz.name} (#{quiz.categories.map(&:name).join(', ')})" %> |
         <%= link_to "TAKE #{quiz.name.upcase}", quiz_current_card_path(quiz) %> | 
-        <%= link_to "Edit", edit_quiz_path(quiz) %>
+        <%= link_to "Edit", edit_quiz_path(quiz) %> |
+        <%= link_to "Delete", quiz_path(quiz), :method => "DELETE" %>
       </li>
     <% end %>
   </ul>

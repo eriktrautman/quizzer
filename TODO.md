@@ -1,7 +1,5 @@
 # TODO
 
-Make a new quiz!
-Edit a quiz!
 Deploy to Heroku
 LATER: UI: High visibility creation / edit form for cards
 LATER: Create javascript listener to use "p" and "f" keys to advance
@@ -12,6 +10,9 @@ SOMEDAY: * Tests
   When you first start off, card views should be empty
   As soon as you pass a card, its card view should be created
 
+DONE Make quiz delete functionality
+DONE Make a new quiz!
+DONE Edit a quiz!
 DONE Change redirect for a new card to the new page
 DONE Set cookie for last used category for card to autopopulate it
 DONE Gussy up the UI for the data entry forms

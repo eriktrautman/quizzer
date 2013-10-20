@@ -49,6 +49,17 @@ class QuizzesController < ApplicationController
     end
   end
 
+  def destroy
+    quiz = Quiz.find(params[:id])
+    if quiz.destroy
+      flash[:success] = "Quiz #{quiz.name} was destroyed successfully"
+      redirect_to quizzes_path
+    else
+      flash[:error] = "Quiz #{quiz.name} couldn't be destroyed because of errors: #{quiz.errors.full_messages}"
+      redirect_to quizzes_path
+    end
+  end
+
   def current_card
     quiz = Quiz.find(params[:quiz_id])
     current_card = quiz.current_card
