@@ -32,7 +32,7 @@ class CardsController < ApplicationController
     cookies[:category_id] = card_params[:category_id]
     if @card.save
       flash[:success] = "Card #{@card.title} created!"
-      redirect_to cards_path
+      redirect_to new_card_path
     else
       flash.now[:error] = "Couldn't create card because: #{@card.errors.full_messages}"
       render :new
