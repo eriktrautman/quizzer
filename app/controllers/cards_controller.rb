@@ -22,10 +22,14 @@ class CardsController < ApplicationController
 
   def new
     @card = Card.new
+    unless cookies[:category_id].nil?
+      @card.category_id = cookies[:category_id] 
+    end
   end
 
   def create
     @card = Card.new(card_params)
+    cookies[:category_id] = card_params[:category_id]
     if @card.save
       flash[:success] = "Card #{@card.title} created!"
       redirect_to cards_path
