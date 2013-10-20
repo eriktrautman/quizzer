@@ -1,9 +1,11 @@
 # TODO
 
-UI: High visibility creation / edit form for cards
+Make a new quiz!
+Edit a quiz!
 Deploy to Heroku
-Create javascript listener to use "p" and "f" keys to advance
-* Tests
+LATER: UI: High visibility creation / edit form for cards
+LATER: Create javascript listener to use "p" and "f" keys to advance
+SOMEDAY: * Tests
   Make sure user can't create identical quizzes
   When you pass a card, its views should update properly
   When you fail a card, its views should update properly

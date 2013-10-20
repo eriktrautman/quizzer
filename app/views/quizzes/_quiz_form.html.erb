@@ -1,0 +1,8 @@
+  <%= simple_form_for(quiz) do |f| %>
+
+    <%= f.input :name %>
+    <%= f.association :categories %>
+    <%= f.association :user, :label_method => :email %>
+    <%= f.submit %>
+
+  <% end %>

@@ -27,6 +27,28 @@ class QuizzesController < ApplicationController
     end
   end
 
+  def edit
+    @quiz = Quiz.find(params[:id])
+  end
+
+  def update
+    user = User.find_by_id(params[:quiz][:user_id])
+    if user
+      @quiz = Quiz.find_by_id(params[:id])
+      if @quiz.update_attributes(quiz_params)
+        user.create_category_queues(quiz_params[:category_ids])
+        flash[:success] = "Quiz Updated!"
+        redirect_to quizzes_path
+      else
+        flash[:error] = "Quiz couldn't be updated because: #{@quiz.errors.full_messages}!"
+        render :new
+      end
+    else
+      flash[:error] = "Quiz couldn't be updated because the User was invalid"
+      render :new
+    end
+  end
+
   def current_card
     quiz = Quiz.find(params[:quiz_id])
     current_card = quiz.current_card

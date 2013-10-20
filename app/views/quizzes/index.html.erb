@@ -1,13 +1,24 @@
 <h1>
   Welcome to Quizzer!
 </h1>
+<h2>
+  Choose from the quizzes below:
+</h2>
+
+<%= link_to new_quiz_path do %>
+  <div class="new-something-link">
+    NEW QUIZ
+  </div>
+<% end %>
 
 <div class="quiz-list">
   <ul>
     <% @quizzes.each do |quiz| %>
-      <%= link_to quiz_current_card_path(quiz) do %>
-        <li><%= quiz.name %></li>
-      <% end %>
+      <li>
+        <%= "#{quiz.name} (#{quiz.categories.map(&:name).join(', ')})" %> |
+        <%= link_to "TAKE #{quiz.name.upcase}", quiz_current_card_path(quiz) %> | 
+        <%= link_to "Edit", edit_quiz_path(quiz) %>
+      </li>
     <% end %>
   </ul>
 </div>
