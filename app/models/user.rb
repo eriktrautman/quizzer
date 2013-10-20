@@ -30,8 +30,12 @@ class User < ActiveRecord::Base
   def rebuild_category_queue(category_id)
     category = Category.find(category_id)
     ucq = self.user_category_queues.where(:category_id => category_id).first
-    q = ucq.queue | category.cards
-    puts "\n\n\n\n\n\n REBUILT IT! New Q: #{q.inspect}!!\n\n\n\n\n"
+    # puts "\n\n UCQ.queue = #{ucq.queue.to_a}!\n\n"
+    # puts "\n\n Category.cards = #{category.cards.to_a}!\n\n"
+    q = ucq.queue.to_a | category.cards.to_a
+    # puts "\n\n\n\n\n\n REBUILT IT! New Q of #{q.size} cards:!!"
+    # q.each {|card| puts "ID:#{card.id} -- #{card.title}"}
+    # puts "\n\n\n\n\n"
   end
 
   # Update the pass numbers
