@@ -5,6 +5,14 @@ class User < ActiveRecord::Base
   has_many :quizzes
   has_many :user_category_queues
 
+    # This is necessary because when ActiveRecord tries to
+  # deserialize the "queue" column of UserCategoryQueue,
+  # it doesn't yet know what a "card" object is, and throws
+  # an error.  For more info, see:
+  # http://stackoverflow.com/questions/13750342/yamlload-raises-undefined-class-module-error
+
+  require 'Card'
+
   # create the user category queues if they don't already exist
   def create_category_queues(category_ids)
     ucqs = self.user_category_queues
