@@ -29,6 +29,9 @@ Quizzer::Application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
+  # ERIK:
+  config.assets.precompile = true
+
   # Generate digests for assets URLs.
   config.assets.digest = true
 
