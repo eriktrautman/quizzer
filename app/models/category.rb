@@ -7,7 +7,7 @@ class Category < ActiveRecord::Base
   validates :name, :presence => true
 
   def new_queue
-    self.cards.shuffle
+    self.cards.shuffle.map(&:id)
   end
 
 end
