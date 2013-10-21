@@ -31,7 +31,7 @@ Quizzer::Application.configure do
 
   # ERIK:
   # config.assets.precompile = true
-  config.assets.initialize_on_precompile = false
+
 
   # Generate digests for assets URLs.
   config.assets.digest = true
