@@ -3,5 +3,5 @@
   # it doesn't yet know what a "card" object is, and throws
   # an error.  For more info, see:
   # http://stackoverflow.com/questions/13750342/yamlload-raises-undefined-class-module-error
-  config.assets.initialize_on_precompile = false
+
   require 'Card'

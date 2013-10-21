@@ -25,6 +25,9 @@ gem 'binding_of_caller'
 # for markdown rendering
 gem 'redcarpet' 
 
+# for heroku asset pipeline
+gem 'rails_12factor'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
