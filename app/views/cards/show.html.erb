@@ -28,8 +28,8 @@
   <div class="bottom-action-pack">
     <%= render :partial => "pass_fail", :locals => { :quiz => @quiz, :card_id => @card.id } %>
   </div>
-</div>
-
-<div class="sidebar-stats">
-  <%= render :partial => "sidebar", :locals => { :ucqs => @ucqs } %>
+  
+  <div class="sidebar-stats">
+    <%= render :partial => "sidebar", :locals => { :ucqs => @ucqs } %>
+  </div>
 </div>
