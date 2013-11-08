@@ -11,13 +11,13 @@
   <ul>
     <% @categories.each do |cat| %>
       <li><%= link_to cat.name, edit_category_path(cat), :class => "category" %>
-        <ul>
+        <ol>
           <% cat.cards.each do |card| %>
             <%= link_to edit_card_path(card) do %>
               <li><%= card.title %></li>
             <% end %>
           <% end %>
-        </ul>
+        </ol>
       </li>
     <% end %>
   </ul>
