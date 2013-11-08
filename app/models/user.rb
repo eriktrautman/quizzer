@@ -22,7 +22,11 @@ class User < ActiveRecord::Base
   def rebuild_category_queue(category_id)
     category = Category.find(category_id)
     ucq = self.user_category_queues.where(:category_id => category_id).first
-    q = ucq.queue.to_a | category.cards.to_a.map(&:id)
+    full_list = category.cards.to_a.map(&:id)
+    # mash in all new cards but preserve order as much as possible
+    # also ensure that any bogus cards that snuck in get weeded out
+    # because apparently that's a problem somehow
+    q = ucq.queue.to_a & full_list | full_list
     ucq.update_attributes!(:queue => q)
   end
 
