@@ -1,5 +1,16 @@
 # TODO
 
+Make a "reshuffle queue" button
+If cards have a >80% pass rate, push to the end of the list
+Fix list styling to be less lame
+Switch font to a sans serif
+Look at the 10 cust dev questions -- OL issues, ol>ul issues, overflow text issues.
+Include "edit card" link while quizzing that pops up a separate window
+Switch from equal weighting to proportional for categories
+add temporary vs historical analytics (session stored)
+Add streak to temporary analytics as well
+Add 5% or something to a failing card to prevent it coming next
+Fix the card shuffle algorithm for passes to not put them so close to the beginning.
 LATER: UI: High visibility creation / edit form for cards
 LATER: Create javascript listener to use "p" and "f" keys to advance
 SOMEDAY: * Tests
@@ -9,6 +20,8 @@ SOMEDAY: * Tests
   When you first start off, card views should be empty
   As soon as you pass a card, its card view should be created
 
+DONE Fix ordered lists from roman numerals to normal numbers
+DONE Display the upcoming (and updated) queue off to one side
 DONE Fix queues to contain only ids not actual objects
 DONE Deploy to Heroku... NOTE: Dealing with the serialization of an array of class instances of Card was totally fooked.  Next time make it an array of IDs... it doesn't even make sense to serialize the class because what if it changes?  Very dumb.
 DONE Make quiz delete functionality

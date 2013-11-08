@@ -94,8 +94,16 @@
     margin: 2em 0;
   }
 
+
 }
 
+.sidebar-stats{
+  font-size: .5em;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  z-index: -1000;
+}
 
 #list{
   ul{
