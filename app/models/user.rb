@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
     # mash in all new cards but preserve order as much as possible
     # also ensure that any bogus cards that snuck in get weeded out
     # because apparently that's a problem somehow
-    q = ucq.queue.to_a & full_list | full_list
+    q = ucq.queue.to_a&full_list|full_list
     puts "q is now #{q}!"
     ucq.update_attributes!(:queue => q)
     puts "New queue is #{ucq.queue}!\n\n"
