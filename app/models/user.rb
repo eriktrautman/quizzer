@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
   has_many :card_views
   has_many :viewed_cards, :through => :card_views, :source => :card
   has_many :quizzes
-  has_many :user_quiz_queues
-
 
 
   # for a given user and category, add any unused cards to the queue
