@@ -26,7 +26,7 @@ class Quiz < ActiveRecord::Base
     shuffle_pct = cv.get_shuffle_location
     q = self.queue
     puts "\n\n OLD QUEEUE : #{q}!!"
-    new_pos = q.size * shuffle_pct - 1
+    new_pos = [0,q.size * shuffle_pct - 1].max
     self.queue = q.insert(new_pos, q.delete_at(0))
     puts "NEW QUEUE: #{q}!\n\n"
     self.save!
