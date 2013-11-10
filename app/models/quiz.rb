@@ -14,7 +14,7 @@ class Quiz < ActiveRecord::Base
   serialize :queue, Array
 
   def create_queue
-    self.queue = self.cards.map(&:id)
+    self.queue = self.cards.map(&:id).shuffle
     self.save!
   end
 
