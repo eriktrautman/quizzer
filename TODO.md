@@ -1,20 +1,12 @@
 # TODO
 
-* Make a "reshuffle queue" button
-* fix issue where switching a card's category can cause it to get stuck in the wrong queue and then not allow that queue to refresh itself because it tries to refresh the wrong queue every time... maybe put queues in the quiz instead of UCQs?
-* If cards have a >80% pass rate, push to the end of the list
 * Fix list styling to be less lame
-* Switch font to a sans serif
 * Look at the 10 cust dev questions -- OL issues, ol>ul issues, overflow text issues.
-* Include "edit card" link while quizzing that pops up a separate window
-* Switch from equal weighting to proportional for categories
-* add temporary vs historical analytics (session stored)
-* Add streak to temporary analytics as well
-* Add 5% or something to a failing card to prevent it coming next
-* Fix the card shuffle algorithm for passes to not put them so close to the beginning.
+* SOMEDAY: 
+* LATER: add temporary vs historical analytics (session stored)
+* LATER: Add streak to temporary analytics as well
 * LATER: UI: High visibility creation / edit form for cards
 * LATER: Create javascript listener to use "p" and "f" keys to advance
-* SOMEDAY: 
 * Tests
   Make sure user can't create identical quizzes
   When you pass a card, its views should update properly
@@ -22,6 +14,14 @@
   When you first start off, card views should be empty
   As soon as you pass a card, its card view should be created
 
+DONE Switch font to a sans serif
+DONE Include "edit card" link while quizzing that pops up a separate window
+DONE Make a "reshuffle queue" button
+DONE fix issue where switching a card's category can cause it to get stuck in the wrong queue and then not allow that queue to refresh itself because it tries to refresh the wrong queue every time... maybe put queues in the quiz instead of UCQs?
+DONE Fix the card shuffle algorithm for passes to not put them so close to the beginning.
+DONE Add 5% or something to a failing card to prevent it coming next
+DONE Switch from equal weighting to proportional for categories
+DONE If cards have a >80% pass rate, push to the end of the list
 DONE Fix ordered lists from roman numerals to normal numbers
 DONE Display the upcoming (and updated) queue off to one side
 DONE Fix queues to contain only ids not actual objects

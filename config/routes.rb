@@ -2,6 +2,8 @@ Quizzer::Application.routes.draw do
 
   root "quizzes#index"
 
+  get "reshuffle_queue" => "quizzes#reshuffle_queue"
+
   resources :quizzes do
     get "current_card" => "quizzes#current_card"
     post "next_card" => "quizzes#next_card"

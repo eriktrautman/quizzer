@@ -87,6 +87,12 @@ class QuizzesController < ApplicationController
     end
   end
 
+  def reshuffle_queue
+    quiz = Quiz.find(params[:quiz_id])
+    quiz.shuffle_queue
+    redirect_to quiz_card_path(quiz, quiz.current_card)
+  end
+
   private
 
   def quiz_params

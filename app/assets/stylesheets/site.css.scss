@@ -1,6 +1,7 @@
 
 body{
   font-size: 100%;
+  font-family: "Helvetica Neue", Helvetica, sans-serif
 }
 
 /* Typography Scale */
@@ -49,6 +50,10 @@ a{
       
     }
   }
+}
+
+.clearfix{
+  clear: both;
 }
 
 #content{

@@ -1,7 +1,13 @@
+<h4>Action Buttons</h4>
+<ul>
+  <li><%= link_to "Reshuffle queue", reshuffle_queue_path(:quiz_id=>quiz.id) %></li>
+  <li><%= link_to "Edit Card", edit_card_path(card.id), :target => "blank" %></li>
+</ul>
+
 <h4>Possible Upcoming Cards:</h4>
 
 <ol>
-  <% q.each do |cid| %>
+  <% quiz.queue.each do |cid| %>
     <li><%= Card.find(cid).title %></li>
   <% end %>
 </ol>
