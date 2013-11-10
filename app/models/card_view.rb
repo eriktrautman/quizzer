@@ -16,7 +16,7 @@ class CardView < ActiveRecord::Base
   # .3 means it should be placed in the nearest 30%
   def get_shuffle_location
     pass_rate = (1.0 * self.pass_count / ( self.pass_count + self.fail_count ))
-    shuffle_location = pass_rate / (1.0+self.urgency)
+    shuffle_location = [2 * (pass_rate / (1.0+ 3 * self.urgency) ), 1].min
     puts "\n\nSHUFFLE pct is : #{shuffle_location}\n\n"
     shuffle_location
   end
