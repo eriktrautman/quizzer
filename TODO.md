@@ -1,19 +1,21 @@
 # TODO
 
-Make a "reshuffle queue" button
-If cards have a >80% pass rate, push to the end of the list
-Fix list styling to be less lame
-Switch font to a sans serif
-Look at the 10 cust dev questions -- OL issues, ol>ul issues, overflow text issues.
-Include "edit card" link while quizzing that pops up a separate window
-Switch from equal weighting to proportional for categories
-add temporary vs historical analytics (session stored)
-Add streak to temporary analytics as well
-Add 5% or something to a failing card to prevent it coming next
-Fix the card shuffle algorithm for passes to not put them so close to the beginning.
-LATER: UI: High visibility creation / edit form for cards
-LATER: Create javascript listener to use "p" and "f" keys to advance
-SOMEDAY: * Tests
+* Make a "reshuffle queue" button
+* fix issue where switching a card's category can cause it to get stuck in the wrong queue and then not allow that queue to refresh itself because it tries to refresh the wrong queue every time... maybe put queues in the quiz instead of UCQs?
+* If cards have a >80% pass rate, push to the end of the list
+* Fix list styling to be less lame
+* Switch font to a sans serif
+* Look at the 10 cust dev questions -- OL issues, ol>ul issues, overflow text issues.
+* Include "edit card" link while quizzing that pops up a separate window
+* Switch from equal weighting to proportional for categories
+* add temporary vs historical analytics (session stored)
+* Add streak to temporary analytics as well
+* Add 5% or something to a failing card to prevent it coming next
+* Fix the card shuffle algorithm for passes to not put them so close to the beginning.
+* LATER: UI: High visibility creation / edit form for cards
+* LATER: Create javascript listener to use "p" and "f" keys to advance
+* SOMEDAY: 
+* Tests
   Make sure user can't create identical quizzes
   When you pass a card, its views should update properly
   When you fail a card, its views should update properly

@@ -14,7 +14,7 @@ class QuizzesController < ApplicationController
     if user
       @quiz = Quiz.new(quiz_params)
       if @quiz.save
-        user.create_category_queues(quiz_params[:category_ids])
+        @quiz.create_queue
         flash[:success] = "Quiz Created!"
         redirect_to quiz_current_card_path(@quiz)
       else
@@ -72,10 +72,14 @@ class QuizzesController < ApplicationController
     if ["pass","fail"].include?(params[:card_status])
       quiz = Quiz.find(params[:quiz_id])
       user = quiz.user
-      current_card = Card.find(params[:card_id])
-      user.pass_card(current_card) if params[:card_status] == "pass"
-      user.fail_card(current_card) if params[:card_status] == "fail"
-      # flash[:success] = "Good work! Next card:"
+      card = Card.find(params[:card_id])
+
+      card.pass(user) if params[:card_status] == "pass"
+      card.fail(user) if params[:card_status] == "fail"
+
+      cv = CardView.find_or_create(user, card)
+      quiz.shuffle_card_into_queue(cv)
+
       current_card = quiz.current_card
       redirect_to quiz_card_path(quiz, current_card)
     else
