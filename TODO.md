@@ -1,8 +1,7 @@
 # TODO
 
-* Fix list styling to be less lame
-* Look at the 10 cust dev questions -- OL issues, ol>ul issues, overflow text issues.
 * SOMEDAY: 
+* Look at the 10 cust dev questions -- OL issues, ol>ul issues, overflow text issues.
 * LATER: add temporary vs historical analytics (session stored)
 * LATER: Add streak to temporary analytics as well
 * LATER: UI: High visibility creation / edit form for cards
@@ -14,6 +13,7 @@
   When you first start off, card views should be empty
   As soon as you pass a card, its card view should be created
 
+DONE Fix list styling to be less lame
 DONE Switch font to a sans serif
 DONE Include "edit card" link while quizzing that pops up a separate window
 DONE Make a "reshuffle queue" button
